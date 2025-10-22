@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EME Air International — Visa Application Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    @layer utilities { .perspective-1000 { perspective: 1000px; } }
+    @keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)} }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+  </style>
+</head>
+<body class="antialiased text-gray-900 bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white py-4 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <img src="assets/logo.png" alt="EME Air International" class="h-10 w-10 object-contain rounded-md">
+        <div>
+          <div class="text-sm font-bold text-yellow-500">EME AIR INTERNATIONAL</div>
+          <div class="text-xs text-gray-600">FLY EME, FEEL THE DIFFERENCE</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto py-12 px-6">
+    <h2 class="text-2xl font-bold mb-4">EME AIR INTERNATIONAL – Visa Application Form</h2>
+    <p class="text-gray-700 mb-6">Welcome to EME AIR INTERNATIONAL (License No: 0014050) — your trusted travel and visa processing partner.
+      Please complete the form below and upload all required documents for your visa application.</p>
+
+    <!-- Contact block -->
+    <div class="mb-4 text-sm text-gray-700">
+      <p>📍 Office: House - 04 (2nd Floor), Road - 12, Sector - 06, Uttara, Dhaka</p>
+      <p>📞 +8801614-787836, +8801734-787836, +8801941-038484, +8801400530001</p>
+      <p>📧 emeairinternational@gmail.com</p>
+      <p class="text-red-500">⚠️ Note: Incomplete forms or missing documents may delay processing.
+        All uploads must be in PDF / JPG / PNG format (max 10MB each).</p>
+    </div>
+
+    <!-- FORM -->
+    <form id="visaForm" class="space-y-6" onsubmit="return false;">
+      <!-- Section 1 -->
+      <section>
+        <h3 class="text-xl font-semibold mb-3">✈️ Section 1: Applicant Details</h3>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">1️⃣ Full Name (as per passport)</label>
+          <input type="text" id="full_name" name="full_name" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">2️⃣ Mobile Number (WhatsApp preferred)</label>
+          <input type="text" id="mobile_number" name="mobile_number" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">3️⃣ Email Address</label>
+          <input type="email" id="email_address" name="email_address" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">4️⃣ Nationality</label>
+          <input type="text" id="nationality" name="nationality" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">5️⃣ Passport Number</label>
+          <input type="text" id="passport_number" name="passport_number" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">6️⃣ Passport Validity (at least 6 months)
+            <br>📂 Upload your valid passport (PDF/JPG)</label>
+          <input type="file" id="passport_validity" name="passport_validity" accept=".pdf,image/*" required class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+		  <span id="passport_validity_filename"></span>
+		  <div id="passport_validity_preview" class="hidden"></div>
+      <button id="passport_validity_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">7️⃣ Profile Photo (35mm × 50mm)
+            <br>📂 Upload 1 recent photo (white background, 35×50mm)</label>
+          <input type="file" id="profile_photo" name="profile_photo" accept="image/*" required class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+		  <span id="profile_photo_filename"></span>
+		  <div id="profile_photo_preview" class="hidden"></div>
+      <button id="profile_photo_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">8️⃣ 6-Month Bank Statement & Solvency Certificate 
+            <br>📂 Upload both in one or separate files</label>
+          <input type="file" id="bank_statement" name="bank_statement" accept=".pdf,image/*" multiple required class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+		  <span id="bank_statement_filename"></span>
+		  <div id="bank_statement_preview" class="hidden"></div>
+      <button id="bank_statement_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">9️⃣ If applicable: NID / Birth Certificate – File upload (Optional)
+            <br>📂 Upload only if applicable</label>
+          <input type="file" id="nid_birth_certificate" name="nid_birth_certificate" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+		  <span id="nid_birth_certificate_filename"></span>
+		  <div id="nid_birth_certificate_preview" class="hidden"></div>
+      <button id="nid_birth_certificate_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section>
+        <h3 class="text-xl font-semibold mb-3">🗂️ Section 2: Category of Applicant</h3>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">10️⃣ Category</label>
+          <select id="category" name="category" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <option value="">Select Category</option>
+            <option value="business">Business</option>
+            <option value="employee">Employee</option>
+            <option value="student">Student</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div id="business_section" class="hidden">
+          <h4 class="text-lg font-semibold mb-3">👔 If Business (Required Documents):</h4>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Trade License (Notarized) – File upload</label>
+            <input type="file" id="trade_license" name="trade_license" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="trade_license_filename"></span>
+			<div id="trade_license_preview" class="hidden"></div>
+      <button id="trade_license_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Visiting Card – File upload</label>
+            <input type="file" id="visiting_card_business" name="visiting_card_business" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="visiting_card_business_filename"></span>
+			<div id="visiting_card_business_preview" class="hidden"></div>
+      <button id="visiting_card_business_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Office Pad (Blank Copy) – File upload</label>
+            <input type="file" id="office_pad" name="office_pad" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="office_pad_filename"></span>
+			<div id="office_pad_preview" class="hidden"></div>
+      <button id="office_pad_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+        </div>
+
+        <div id="employee_section" class="hidden">
+          <h4 class="text-lg font-semibold mb-3">👨‍💼 If Employee (Required Documents):</h4>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Office ID – File upload</label>
+            <input type="file" id="office_id" name="office_id" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="office_id_filename"></span>
+			<div id="office_id_preview" class="hidden"></div>
+      <button id="office_id_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 NOC / Forwarding Letter – File upload</label>
+            <input type="file" id="noc_forwarding_letter" name="noc_forwarding_letter" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="noc_forwarding_letter_filename"></span>
+			<div id="noc_forwarding_letter_preview" class="hidden"></div>
+      <button id="noc_forwarding_letter_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Pay Slip / Salary Certificate – File upload</label>
+            <input type="file" id="pay_slip_salary_certificate" name="pay_slip_salary_certificate" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="pay_slip_salary_certificate_filename"></span>
+			<div id="pay_slip_salary_certificate_preview" class="hidden"></div>
+      <button id="pay_slip_salary_certificate_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Visiting Card (if any) – File upload (Optional)</label>
+            <input type="file" id="visiting_card_employee" name="visiting_card_employee" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="visiting_card_employee_filename"></span>
+			<div id="visiting_card_employee_preview" class="hidden"></div>
+      <button id="visiting_card_employee_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+        </div>
+
+        <div id="student_section" class="hidden">
+          <h4 class="text-lg font-semibold mb-3">🎓 If Student (Required Documents):</h4>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Student ID – File upload</label>
+            <input type="file" id="student_id" name="student_id" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="student_id_filename"></span>
+			<div id="student_id_preview" class="hidden"></div>
+      <button id="student_id_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+        </div>
+
+        <div id="other_section" class="hidden">
+          <h4 class="text-lg font-semibold mb-3">🧾 If Other (Required Documents):</h4>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">14️⃣ Describe Your Occupation or Purpose – Paragraph (Required)</label>
+            <textarea id="occupation_purpose" name="occupation_purpose" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="block text-gray-700 text-sm font-bold mb-2">📂 Supporting Document (Optional) – File upload</label>
+            <input type="file" id="supporting_document" name="supporting_document" accept=".pdf,image/*" class="drag-and-drop-file shadow border rounded w-full py-2 px-3 text-gray-700">
+			<span id="supporting_document_filename"></span>
+			<div id="supporting_document_preview" class="hidden"></div>
+      <button id="supporting_document_preview_button" class="hidden bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Preview</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section>
+        <h3 class="text-xl font-semibold mb-3">🌍 Section 3: Visa Information</h3>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">15️⃣ Destination Country – Short answer (Required)</label>
+          <input type="text" id="destination_country" name="destination_country" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">16️⃣ Visa Type – Multiple choice</label>
+          <select id="visa_type" name="visa_type" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+            <option value="">Select Visa Type</option>
+            <option value="tourist">Tourist Visa</option>
+            <option value="business">Business Visa</option>
+            <option value="student">Student Visa</option>
+            <option value="transit">Transit Visa</option>
+            <option value="family_visit">Family Visit Visa</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">17️⃣ Expected Travel Date – Date picker</label>
+          <input type="date" id="expected_travel_date" name="expected_travel_date" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+
+        <div class="mb-3">
+          <label class="block text-gray-700 text-sm font-bold mb-2">18️⃣ Additional Notes / Comments – Paragraph</label>
+          <textarea id="additional_notes" name="additional_notes" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+        </div>
+      </section>
+
+      <!-- Submit -->
+      <div class="text-center">
+        <button id="submitBtn" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit Application</button>
+      </div>
+
+      <div id="status" class="mt-4 text-center text-sm"></div>
+    </form>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: false, mirror: false });
+
+    // Category dynamic sections
+    const categorySelect = document.getElementById('category');
+    const businessSection = document.getElementById('business_section');
+    const employeeSection = document.getElementById('employee_section');
+    const studentSection = document.getElementById('student_section');
+    const otherSection = document.getElementById('other_section');
+
+    categorySelect.addEventListener('change', function() {
+      businessSection.classList.add('hidden');
+      employeeSection.classList.add('hidden');
+      studentSection.classList.add('hidden');
+      otherSection.classList.add('hidden');
+
+      if (this.value === 'business') {
+        businessSection.classList.remove('hidden');
+      } else if (this.value === 'employee') {
+        employeeSection.classList.remove('hidden');
+      } else if (this.value === 'student') {
+        studentSection.classList.remove('hidden');
+      } else if (this.value === 'other') {
+        otherSection.classList.remove('hidden');
+      }
+    });
+
+    // Helper: read file as base64 (file) {
+    function fileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => {
+          // reader.result like: "data:application/pdf;base64,JVBERi0xL..."
+          const res = reader.result;
+          const parts = res.split(',');
+          const meta = parts[0]; // data:mime/type;base64
+          const content = parts[1];
+          // get mimeType
+          const mimeMatch = meta.match(/data:(.*);base64/);
+          const mimeType = mimeMatch ? mimeType[1] : file.type || 'application/octet-stream';
+          resolve({ name: file.name, mimeType, content });
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    document.getElementById('submitBtn').addEventListener('click', async function () {
+      const statusEl = document.getElementById('status');
+      statusEl.innerHTML = '⏳ Preparing your application...';
+      this.disabled = true;
+
+      try {
+        // Basic required fields check
+        const req = [
+          'full_name','mobile_number','email_address','passport_number','passport_validity','profile_photo','bank_statement','category','destination_country'
+        ];
+        for (let id of req) {
+          const el = document.getElementById(id);
+          if (!el) continue;
+          if (el.hasAttribute('required')) {
+            if ((el.type === 'file' && el.files.length === 0) || (!el.files && !el.value) || (el.value && el.value.trim() === '')) {
+              statusEl.innerHTML = '⚠️ Please fill all required fields and uploads.';
+              this.disabled = false;
+              return;
+            }
+          }
+        }
+
+        // Collect form data
+        const payload = {
+          full_name: document.getElementById('full_name').value.trim(),
+          mobile_number: document.getElementById('mobile_number').value.trim(),
+          email_address: document.getElementById('email_address').value.trim(),
+          nationality: document.getElementById('nationality').value.trim(),
+          passport_number: document.getElementById('passport_number').value.trim(),
+          category: document.getElementById('category').value,
+          destination_country: document.getElementById('destination_country').value.trim(),
+          visa_type: document.getElementById('visa_type').value,
+          expected_travel_date: document.getElementById('expected_travel_date').value,
+          additional_notes: document.getElementById('additional_notes').value.trim(),
+          // optional occupation_purpose for other
+          occupation_purpose: document.getElementById('occupation_purpose') ? document.getElementById('occupation_purpose').value.trim() : ''
+        };
+
+        // Build list of files to upload (fieldName must match Apps Script file naming)
+        const filesToRead = [];
+
+        function pushFiles(fieldId, fieldName, allowMultiple=false) {
+          const el = document.getElementById(fieldId);
+          if (!el) return;
+          if (el.files && el.files.length > 0) {
+            if (allowMultiple) {
+              for (let f of el.files) filesToRead.push({ fieldName, file: f });
+            } else {
+              // use first file only
+              filesToRead.push({ fieldName, file: el.files[0] });
+            }
+          }
+        }
+
+        // Single-file fields
+        pushFiles('passport_validity', 'passport_validity');
+        pushFiles('profile_photo', 'profile_photo');
+        pushFiles('nid_birth_certificate', 'nid_birth_certificate');
+        pushFiles('trade_license','trade_license');
+        pushFiles('visiting_card_business','visiting_card_business');
+        pushFiles('office_pad','office_pad');
+        pushFiles('office_id','office_id');
+        pushFiles('noc_forwarding_letter','noc_forwarding_letter');
+        pushFiles('pay_slip_salary_certificate','pay_slip_salary_certificate');
+        pushFiles('visiting_card_employee','visiting_card_employee');
+        pushFiles('student_id','student_id');
+        pushFiles('supporting_document','supporting_document');
+
+        // Multi-file fields
+        pushFiles('bank_statement','bank_statement', true);
+
+        // Convert each to base64
+        const files = [];
+        for (let item of filesToRead) {
+          const result = await fileToBase64(item.file);
+          // safety: enforce 10MB limit (raw file size)
+          if (item.file.size > 10 * 1024 * 1024) {
+            statusEl.innerHTML = `⚠️ File "${item.file.name}" exceeds 10MB limit. Please compress or upload a smaller file.`;
+            this.disabled = false;
+            return;
+          }
+          files.push({
+            fieldName: item.fieldName,
+            name: result.name,
+            mimeType: result.mimeType,
+            content: result.content
+          });
+        }
+
+        payload.files = files;
+
+        // Send to Apps Script
+        const SCRIPT_URL = 'https://example.com/your-script-url'; // <-- replace with your deployed Apps Script web app URL
+        statusEl.innerHTML = '🚀 Submitting to EME AIR...';
+
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const json = await response.json();
+        if (json && json.status === 'success') {
+          statusEl.innerHTML = '✅ Application submitted successfully. Our consultant will contact you shortly.';
+          // Optionally clear the form:
+          document.getElementById('visaForm').reset();
+        } else {
+          statusEl.innerHTML = `❌ Submission failed: ${json && json.message ? json.message : 'Unknown error'}`;
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById('status').innerHTML = '❌ Error during submission: ' + err.toString();
+      } finally {
+        this.disabled = false;
+      }
+    });
+
+    const dropArea = document.querySelectorAll('.drag-and-drop-file');
+
+    dropArea.forEach(area => {
+      area.addEventListener('dragover', (event) => {
+        event.preventDefault();
+        area.classList.add('bg-yellow-100');
+      });
+
+      area.addEventListener('dragleave', (event) => {
+        event.preventDefault();
+        area.classList.remove('bg-yellow-100');
+      });
+
+      area.addEventListener('drop', (event) => {
+        event.preventDefault();
+        area.classList.remove('bg-yellow-100');
+        const files = event.dataTransfer.files;
+        // Check if the area is a file input element
+        if (area.tagName === 'INPUT' && area.type === 'file') {
+          area.files = files;
+          // Get the file name and display it
+          const filenameSpan = document.getElementById(area.id + '_filename');
+          if (filenameSpan) {
+            filenameSpan.textContent = files[0] ? files[0].name : '';
+          }
+
+          // Display the file preview
+          const previewDiv = document.getElementById(area.id + '_preview');
+          //const previewButton = document.getElementById(area.id + '_preview_button');
+          if (previewDiv) {
+            if (files[0]) {
+              const reader = new FileReader();
+              reader.onload = (e) => {
+                const fileType = files[0].type;
+                let previewContent = '';
+
+                if (fileType.startsWith('image/')) {
+                  previewContent = `<img src="${e.target.result}" alt="File Preview" class="max-w-full max-h-48">`;
+                } else if (fileType === 'application/pdf') {
+                  previewContent = `<iframe src="${e.target.result}" class="max-w-full max-h-48"></iframe>`;
+                } else {
+                  previewContent = '<span>Unsupported file type</span>';
+                }
+
+                previewDiv.innerHTML = previewContent;
+                previewDiv.classList.remove('hidden');
+                //previewButton.classList.remove('hidden');
+
+                //const result = e.target.result; // Store the result in a variable
+                //previewButton.addEventListener('click', function() {
+                //  window.open(result, '_blank', 'width=800,height=600'); // Use the stored variable
+                //});
+              }
+              reader.readAsDataURL(files[0]);
+            } else {
+              previewDiv.classList.add('hidden');
+              previewDiv.innerHTML = '';
+              //previewButton.classList.add('hidden');
+            }
+          }
+        }
+      });
+    });
+  </script>
+  <footer class="bg-white border-t border-gray-200 py-6 mt-16 text-center text-sm text-gray-500">
+    <div>📞 01614-787836, 01734-787836 | 📞 01941-038484, 01400-530001</div>
+    <div>House -04 (2nd floor), Road -12, Sector -06, Uttara House Building, Uttara, Dhaka, Bangladesh</div>
+    <div class="mt-2">&copy; 2025 EME AIR INTERNATIONAL. All rights reserved.</div>
+  </footer>
+</body>
+</html>

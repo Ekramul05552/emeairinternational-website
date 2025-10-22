@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EME Air International — Booking Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    @layer utilities { .perspective-1000 { perspective: 1000px; } }
+    @keyframes float { 0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)} }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+  </style>
+</head>
+<body class="antialiased text-gray-900 bg-gray-50">
+  <!-- Header -->
+  <header class="bg-white py-4 shadow-md">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <img src="assets/logo.png" alt="EME Air International" class="h-10 w-10 object-contain rounded-md">
+        <div>
+          <div class="text-sm font-bold text-yellow-500">EME AIR INTERNATIONAL</div>
+          <div class="text-xs text-gray-600">FLY EME, FEEL THE DIFFERENCE</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-3xl mx-auto py-12 px-6">
+    <h2 class="text-2xl font-bold mb-4">EME AIR INTERNATIONAL – Booking Form</h2>
+    <p class="text-gray-700 mb-6">Please complete the form below to book your flight.</p>
+
+    <form id="bookingForm" class="space-y-6" onsubmit="return false;">
+      <div>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+        <input type="text" id="full_name" name="full_name" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+      <div>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Email Address</label>
+        <input type="email" id="email_address" name="email_address" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+      <div>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Phone Number</label>
+        <input type="text" id="phone_number" name="phone_number" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+      <div>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Destination</label>
+        <input type="text" id="destination" name="destination" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+      <div>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Travel Date</label>
+        <input type="date" id="travel_date" name="travel_date" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+      <div>
+        <label class="block text-gray-700 text-sm font-bold mb-2">Number of Passengers</label>
+        <input type="number" id="number_of_passengers" name="number_of_passengers" required class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      </div>
+
+      <div class="text-center">
+        <button id="submitBtn" class="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Book Now</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="bg-white border-t border-gray-200 py-6 mt-16 text-center text-sm text-gray-500">
+    <div>📞 01614-787836, 01734-787836 | 📞 01941-038484, 01400-530001</div>
+    <div>House -04 (2nd floor), Road -12, Sector -06, Uttara House Building, Uttara, Dhaka, Bangladesh</div>
+    <div class="mt-2">&copy; 2025 EME AIR INTERNATIONAL. All rights reserved.</div>
+  </footer>
+</body>
+</html>
